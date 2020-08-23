@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <?php include "parts/navbar.php"?>
   <h1>login Page</h1>
 
   <!-- Optional JavaScript -->
