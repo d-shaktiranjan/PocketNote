@@ -15,7 +15,21 @@
 
 <body>
   <?php include "parts/navbar.php"?>
-  <h1>login Page</h1>
+  <div class="container my-3">
+  <form>
+  <h1>Login Here</h1>
+  <hr>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="mail" name="mail" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="pass" name="pass">
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+  </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
