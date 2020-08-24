@@ -16,7 +16,7 @@
 <body>
   <?php include "parts/navbar.php"?>
   <div class="container my-3">
-  <form>
+  <form action="login.php" method="post">
   <h1>Login Here</h1>
   <hr>
   <div class="form-group">
