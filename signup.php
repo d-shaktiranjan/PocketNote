@@ -39,6 +39,27 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   </head>
   <body>
   <?php include "parts/navbar.php"?>
+  <?php
+
+  if($inserted){
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Account Created!</strong> Now you can login.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>';
+  }
+
+  if($passNotMatch){
+    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Error!</strong> Password & confirm password not matched.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>';
+  }
+
+  ?>
   <div class="container">
   <form action="signup.php" method="post">
   <div class="form-group">
