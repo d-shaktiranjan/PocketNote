@@ -1,3 +1,30 @@
+<?php
+
+$inserted=false;
+$passNotMatch=false;
+
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+  include 'parts/dbconnect.php';
+  $mail=$_POST["mail"];
+  $password=$_POST["pass"];
+  $cpassword=$_POST["cpass"];
+
+  if($password==$cpassword){
+    $hash_pass=password_hash($password,PASSWORD_DEFAULT);
+    $sql="INSERT INTO `wn_userdata` (`mail`, `pass`) VALUES ('$mail', '$hash_pass')";
+
+    $result=mysqli_query($conn,$sql);
+    if($result){
+      $inserted=true;
+    }
+  } else{
+    $passNotMatch=true;
+  }
+
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
