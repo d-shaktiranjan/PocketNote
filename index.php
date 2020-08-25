@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!$_SESSION['loggedin']){
+    header("location: login.php");
+}
 $mail=$_SESSION['mail'];
 $ar=explode("@",$mail);
 $name=$ar[0];
