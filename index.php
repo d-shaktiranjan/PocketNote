@@ -6,6 +6,14 @@ if(!$_SESSION['loggedin']){
 $mail=$_SESSION['mail'];
 $ar=explode("@",$mail);
 $name=$ar[0];
+
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    include 'parts/dbconnect.php';
+    $title=$_POST['title'];
+    $note=$_POST['note'];
+    $sql="INSERT INTO `$name` (`title`, `note`) VALUES ('$title', '$note')";
+    $result=mysqli_query($conn,$sql);
+}
 ?>
 <!doctype html>
 <html lang="en">
