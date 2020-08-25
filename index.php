@@ -21,8 +21,10 @@ $name=$ar[0];
 </head>
 
 <body>
+<?php include 'parts/navbar.php'?>
     
     <h1 align="center">Welcome <?php echo $name?></h1>
+    <hr>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
