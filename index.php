@@ -1,3 +1,9 @@
+<?php
+session_start();
+$mail=$_SESSION['mail'];
+$ar=explode("@",$mail);
+$name=$ar[0];
+?>
 <!doctype html>
 <html lang="en">
 
@@ -11,12 +17,12 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
          crossorigin="anonymous">
 
-    <title>Welcome</title>
+    <title>Welcome <?php echo $name?></title>
 </head>
 
 <body>
-    <h1>Home Page</h1>
-
+    
+    <h1 align="center">Welcome <?php echo $name?></h1>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
