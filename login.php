@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+if(isset($_SESSION['mail']) || $_SESSION['loggedin']){
+  header("location: index.html");
+}
+
 if ($_SERVER["REQUEST_METHOD"]=="POST"){
   include 'parts/dbconnect.php';
   $mail=$_POST["mail"];
