@@ -2,6 +2,7 @@
 
 $inserted=false;
 $passNotMatch=false;
+$mail=null;
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
   include 'parts/dbconnect.php';
@@ -86,3 +87,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<?php
+$ar=explode("@",$mail);
+$name=$ar[0];
+if($inserted){
+  $sql="CREATE TABLE `web_note`.`$name` ( `title` VARCHAR(25) NOT NULL , `note` TEXT NOT NULL ) ENGINE = InnoDB";
+  mysqli_query($conn,$sql);
+}
+
+?>
