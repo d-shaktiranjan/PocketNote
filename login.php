@@ -1,3 +1,26 @@
+<?php
+
+if ($_SERVER["REQUEST_METHOD"]=="POST"){
+  include 'parts/dbconnect.php';
+  $mail=$_POST["mail"];
+  $password=$_POST["pass"];
+
+  $sql="SELECT * FROM wn_userdata where mail='$mail'";
+  $result=mysqli_query($conn,$sql);
+  $num=mysqli_num_rows($result);
+
+  if($num==1){
+    while($row=mysqli_fetch_assoc($result)){
+      if(password_verify($password,$row['pass'])){
+        session_start();
+        $_SESSION['loggedin']=true;
+        $_SESSION['mail']=$mail;
+        header("location: index.html");
+      }
+    }
+  }
+}
+?>
 <!doctype html>
 <html lang="en">
 
