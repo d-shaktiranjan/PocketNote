@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(isset($_SESSION['mail']) || $_SESSION['loggedin']){
+if(isset($_SESSION['mail'])){
   header("location: index.php");
 }
 
