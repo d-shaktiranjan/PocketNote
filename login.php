@@ -59,6 +59,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 </form>
   </div>
 
+  <hr>
+  <div class="container" id="signupbtn">
+  <button type="button" class="btn btn-outline-success"
+   onclick="document.location='signup.php'">Create New Account</button>
+  </div>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
