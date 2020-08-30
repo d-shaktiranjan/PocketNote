@@ -73,11 +73,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <input type="password" class="form-control" id="pass" name="pass" required>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
+    <label for="exampleInputPassword1">Confirm Password</label>
     <input type="password" class="form-control" id="cpass" name="cpass" required>
   </div>
   <button type="submit" class="btn btn-primary">Signup</button>
 </form>
+  </div>
+
+  <hr>
+  <div class="container" id="signupbtn">
+  <button type="button" class="btn btn-outline-success"
+   onclick="document.location='login.php'">Already Have An Account</button>
   </div>
 
     <!-- Optional JavaScript -->
