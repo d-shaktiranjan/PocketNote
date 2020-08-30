@@ -39,6 +39,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <div class="container">
     <?php include 'parts/addnote.php'?>
     </div>
+    <div class="container">
+    <?php include 'parts/_note.php'?>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
