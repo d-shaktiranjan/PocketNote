@@ -30,6 +30,9 @@ if($done){
       <span aria-hidden="true">&times;</span>
     </button>
   </div>';
+    echo '<button type="button"
+     onclick="document.location=\'http://localhost/web_note/login.php\'"
+      class="btn btn-outline-primary">Login Again</button>';
 }
   
   ?>
