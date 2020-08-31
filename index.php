@@ -4,7 +4,8 @@ if(!$_SESSION['loggedin']){
     header("location: login.php");
 }
 include 'parts/dbconnect.php';
-$sql="SELECT * FROM `wn_userdata`";
+$mail=$_SESSION['mail'];
+$sql="SELECT * FROM `wn_userdata` WHERE mail='$mail'";
 $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
 $name=$row['fname'];
