@@ -8,6 +8,7 @@ if(isset($_SESSION['mail'])){
 $inserted=false;
 $passNotMatch=false;
 $mail=null;
+$alreadyhere=false;
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
   include 'parts/dbconnect.php';
@@ -17,7 +18,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   $lname=$_POST["lname"];
   $fname=$_POST["fname"];
 
-  if($password==$cpassword){
+  $checkmail="SELECT * FROM `wn_userdata` WHERE mail='$mail'";
+  $result=mysqli_query($conn,$checkmail);
+  $norow=mysqli_num_rows($result);
+  $alreadyhere=false;
+  if($norow>0){
+    $alreadyhere=true;
+  }
+
+  if(($password==$cpassword) && $alreadyhere==false){
     $hash_pass=password_hash($password,PASSWORD_DEFAULT);
     $sql="INSERT INTO `wn_userdata` (`mail`, `pass`, `fname`, `lname`)
      VALUES ('$mail', '$hash_pass', '$fname', '$lname')";
@@ -26,7 +35,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     if($result){
       $inserted=true;
     }
-  } else{
+  }
+
+  if($password!=$cpassword){
     $passNotMatch=true;
   }
 
@@ -62,6 +73,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   if($passNotMatch){
     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Error!</strong> Password & confirm password not matched.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>';
+  }
+  if($alreadyhere){
+    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Sorry!</strong> Email id already taken. Try a different one.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
