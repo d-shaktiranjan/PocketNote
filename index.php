@@ -15,8 +15,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $note=$_POST['note'];
     $ar=explode("@",$mail);
     $smail=$ar[0];
-    $sql="INSERT INTO `testdata` (`title`, `note`, `time`)
-    VALUES ('$title', '$smail', current_timestamp())";
+    $sql="INSERT INTO `$smail` (`title`, `note`, `time`)
+    VALUES ('$title', '$note', current_timestamp())";
     $result=mysqli_query($conn,$sql);
 }
 ?>
