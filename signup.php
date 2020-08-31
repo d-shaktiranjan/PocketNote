@@ -114,7 +114,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 $ar=explode("@",$mail);
 $name=$ar[0];
 if($inserted){
-  $sql="CREATE TABLE `web_note`.`$name` ( `title` VARCHAR(25) NOT NULL , `note` TEXT NOT NULL ) ENGINE = InnoDB";
+  $sql="CREATE TABLE `web_note`.`$name` ( `sno` INT(255) NOT NULL AUTO_INCREMENT ,  `title` VARCHAR(30) NOT NULL ,  `note` TEXT NOT NULL ,  `time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,    PRIMARY KEY  (`sno`)) ENGINE = InnoDB";
   mysqli_query($conn,$sql);
 }
 

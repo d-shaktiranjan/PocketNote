@@ -3,12 +3,13 @@ session_start();
 if(!$_SESSION['loggedin']){
     header("location: login.php");
 }
-$mail=$_SESSION['mail'];
-$ar=explode("@",$mail);
-$name=$ar[0];
+include 'parts/dbconnect.php';
+$sql="SELECT * FROM `wn_userdata`";
+$result=mysqli_query($conn,$sql);
+$row=mysqli_fetch_assoc($result);
+$name=$row['fname'];
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    include 'parts/dbconnect.php';
     $title=$_POST['title'];
     $note=$_POST['note'];
     $sql="INSERT INTO `$name` (`title`, `note`) VALUES ('$title', '$note')";
