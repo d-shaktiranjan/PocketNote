@@ -14,10 +14,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   $mail=$_POST["mail"];
   $password=$_POST["pass"];
   $cpassword=$_POST["cpass"];
+  $lname=$_POST["lname"];
+  $fname=$_POST["fname"];
 
   if($password==$cpassword){
     $hash_pass=password_hash($password,PASSWORD_DEFAULT);
-    $sql="INSERT INTO `wn_userdata` (`mail`, `pass`) VALUES ('$mail', '$hash_pass')";
+    $sql="INSERT INTO `wn_userdata` (`mail`, `pass`, `fname`, `lname`)
+     VALUES ('$mail', '$hash_pass', '$fname', '$lname')";
 
     $result=mysqli_query($conn,$sql);
     if($result){
@@ -72,6 +75,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="mail" name="mail" aria-describedby="emailHelp" required>
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">First Name</label>
+    <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Last Name</label>
+    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
