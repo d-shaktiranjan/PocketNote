@@ -13,7 +13,10 @@ $name=$row['fname'];
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     $title=$_POST['title'];
     $note=$_POST['note'];
-    $sql="INSERT INTO `$name` (`title`, `note`) VALUES ('$title', '$note')";
+    $ar=explode("@",$mail);
+    $smail=$ar[0];
+    $sql="INSERT INTO `testdata` (`title`, `note`, `time`)
+    VALUES ('$title', '$smail', current_timestamp())";
     $result=mysqli_query($conn,$sql);
 }
 ?>
