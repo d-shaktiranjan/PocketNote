@@ -42,10 +42,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <h1 align="center">Welcome <?php echo $name?></h1>
     <hr>
     <div class="container">
-    <?php include 'parts/addnote.php'?>
+    <?php include 'parts/_note.php'?>
     </div>
     <div class="container">
-    <?php include 'parts/_note.php'?>
+    <?php include 'parts/addnote.php'?>
     </div>
     <div class="container">
     <button type="button" class="btn btn-outline-danger" onclick="document.location='parts/_logout.php'">Logout</button>
