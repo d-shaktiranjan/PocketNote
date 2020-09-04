@@ -5,7 +5,7 @@ if(isset($_SESSION['mail'])){
   header("location: index.php");
 }
 
-$mailfound=false;
+$mailnotfound=false;
 $passnotmatched=false;
 
 if ($_SERVER["REQUEST_METHOD"]=="POST"){
@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
   $num=mysqli_num_rows($result);
 
   if($num==1){
-    $mailfound=true;
     while($row=mysqli_fetch_assoc($result)){
       if(password_verify($password,$row['pass'])){
         session_start();
@@ -29,6 +28,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
         $passnotmatched=true;
       }
     }
+  } else{
+    $mailnotfound=true;
   }
 }
 ?>
@@ -49,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 
 <body>
   <?php include "parts/navbar.php";
-  if(!$mailfound){
+  if($mailnotfound){
     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Mail not found!</strong> We don\'t recognized you, Please signup.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
