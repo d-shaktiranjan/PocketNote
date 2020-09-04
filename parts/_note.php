@@ -27,7 +27,7 @@ while($row=mysqli_fetch_assoc($result)){
     <th scope='row'>".$slno."</th>
     <td>"."$row[title]"."</td>
     <td>"."$row[note]"."</td>
-    <td>Soon</td>
+    <td><button type=\"button\" class=\"btn btn-primary\">Delete</button></td>
     </tr>";
     $slno++;
 }
