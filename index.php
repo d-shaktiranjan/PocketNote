@@ -33,18 +33,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
          crossorigin="anonymous">
 
-    <title>Welcome <?php echo $name?></title>
+    <title>WebNote | <?php echo $name?></title>
 </head>
 
 <body>
 <?php include 'parts/navbar.php'?>
     
-    <h1 align="center">Welcome <?php echo $name?></h1>
-    <hr>
+    <h1 align="center">Hey <?php echo $name?></h1>
     <div class="container">
     <?php include 'parts/_note.php'?>
+    <hr>
     </div>
     <div class="container">
+    <h2>Add new notes</h2>
+    <hr>
     <?php include 'parts/addnote.php'?>
     </div>
     <div class="container">

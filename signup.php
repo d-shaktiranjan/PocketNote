@@ -89,6 +89,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
   ?>
   <div class="container">
+  <h1>Signup Here</h1>
+  <hr>
   <form action="signup.php" method="post">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
