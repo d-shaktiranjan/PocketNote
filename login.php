@@ -5,6 +5,9 @@ if(isset($_SESSION['mail'])){
   header("location: index.php");
 }
 
+$mailfound=false;
+$passnotmatched=false;
+
 if ($_SERVER["REQUEST_METHOD"]=="POST"){
   include 'parts/dbconnect.php';
   $mail=$_POST["mail"];
@@ -15,12 +18,15 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
   $num=mysqli_num_rows($result);
 
   if($num==1){
+    $mailfound=true;
     while($row=mysqli_fetch_assoc($result)){
       if(password_verify($password,$row['pass'])){
         session_start();
         $_SESSION['loggedin']=true;
         $_SESSION['mail']=$mail;
         header("location: index.php");
+      } else{
+        $passnotmatched=true;
       }
     }
   }
@@ -42,7 +48,24 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 </head>
 
 <body>
-  <?php include "parts/navbar.php"?>
+  <?php include "parts/navbar.php";
+  if(!$mailfound){
+    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Mail not found!</strong> We don\'t recognized you, Please signup.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>';
+  }
+  if($passnotmatched){
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error!</strong> Password not matched.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>';
+  }
+  ?>
   <div class="container my-3">
   <form action="login.php" method="post">
   <h1>Login Here</h1>
