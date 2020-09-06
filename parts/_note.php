@@ -9,7 +9,7 @@ $name=$ar[0];
 $sql="SELECT * FROM `$name`";
 $result=mysqli_query($conn,$sql);
 
-echo '<table class="table">
+echo '<table class="table" id="myTable">
 <thead class="thead-dark">
   <tr>
     <th scope="col">Sl. No.</th>
