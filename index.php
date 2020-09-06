@@ -42,6 +42,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     
     <h1 align="center">Hey <?php echo $name?></h1>
     <div class="container">
+    <hr>
     <?php include 'parts/_note.php'?>
     <hr>
     </div>
