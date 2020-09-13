@@ -80,7 +80,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="profileModalLabel">
-        <img src="imgs/profile.png" height="30px" width="30px" alt=""> Your Profile</h5>
+        <img src="imgs/profile.png" height="30px" width="30px" alt=""> <?php echo $fname?>'s Profile</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -88,6 +88,24 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       <div class="modal-body container">
         <h5>Name:- <?php echo $fname." ".$lname?></h5><br>
         <h5>Mail:- <?php echo $mail?></h5>
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#passModal">Change Password</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Pass Modal -->
+<div class="modal fade" id="passModal" tabindex="-1" aria-labelledby="passModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="passModalLabel">Change Password</h5>
+      </div>
+      <div class="modal-body">
+        <?php include 'parts/_pass.php'?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
