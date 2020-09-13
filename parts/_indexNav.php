@@ -7,7 +7,7 @@ echo '<!-- Image and text -->
     width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
     Web Note
   </a>
-  <button type="button" class="btn btn-outline-primary">
+  <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#profileModal">
         <img src="imgs/userMale.png" height="30px" width="30px" alt=""> Profile</button>
 </nav>';
 

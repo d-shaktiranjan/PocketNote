@@ -9,6 +9,9 @@ $sql="SELECT * FROM `wn_userdata` WHERE mail='$mail'";
 $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
 $name=$row['fname'];
+$fname=$name;
+$lname=$row['lname'];
+$mail=$row['mail'];
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     $title=$_POST['title'];
@@ -71,6 +74,27 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $('#myTable').DataTable();
     } );
     </script>
+    <!-- Modal -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="profileModalLabel">
+        <img src="imgs/profile.png" height="30px" width="30px" alt=""> Your Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body container">
+        <h5>Name:- <?php echo $fname." ".$lname?></h5><br>
+        <h5>Mail:- <?php echo $mail?></h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 
 </html>
