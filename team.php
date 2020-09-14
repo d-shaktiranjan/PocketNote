@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="teamStyle.css" />
   </head>
   <body>
+    <?php include 'parts/navbar.php'?>
+    <div class="container">
+      <h1>Meet Our Team</h1>
+    </div>
     <section class="card-list">
       <article class="card">
         <header class="card-header">
           <p>Back-End Developer</p>
-          <h2>The Piro in ctrl+c & ctrl+v!!</h2>
+          <h2>!(The Piro)</h2>
         </header>
 
         <div class="card-author">
