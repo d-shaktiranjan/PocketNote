@@ -1,5 +1,12 @@
 <?php
 
+$linkName=$_SERVER['PHP_SELF'];
+$teamName="/web_note/team.php";
+$inTeam=false;
+if($linkName==$teamName){
+  $inTeam=true;
+}
+
 echo '<!-- Image and text -->
 <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand" href="index.php">
@@ -7,7 +14,9 @@ echo '<!-- Image and text -->
     width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
     Web Note
   </a>';
-echo '<a class="btn btn-primary" href="team.php" role="button">Our Team</a>';
+if(!$inTeam){
+  echo '<a class="btn btn-primary" href="team.php" role="button">Our Team</a>';
+}
 echo '</nav>';
 
 ?>
