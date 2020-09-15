@@ -1,9 +1,10 @@
 <?php
 
 $linkName=$_SERVER['PHP_SELF'];
-$teamName="/web_note/team.php";
+$lsTeamName="/web_note/team.php";
+$serverTeamName="/team.php";
 $inTeam=false;
-if($linkName==$teamName){
+if(($linkName==$lsTeamName) || ($linkName==$serverTeamName)){
   $inTeam=true;
 }
 
