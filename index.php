@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 </head>
 
 <body>
-<?php include 'parts/_indexNav.php'?>
+<?php include 'parts/navbar.php'?>
     
     <h1 align="center">Hey <?php echo $name?></h1>
     <div class="container">
