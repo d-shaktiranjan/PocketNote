@@ -10,7 +10,6 @@ echo '<form action="index.php" method="post">
     <textarea class="form-control" id="note" name="note" rows="3" required></textarea>
   </div>
 <button type="submit" class="btn btn-primary">Add Note</button>
-</form><hr>';
-
+</form>';
 
 ?>

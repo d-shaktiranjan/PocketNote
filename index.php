@@ -50,9 +50,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <hr>
     </div>
     <div class="container">
-    <h2>Add new notes</h2>
+    <button type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#addNoteModal">
+      Add New Note
+    </button>
     <hr>
-    <?php include 'parts/addnote.php'?>
     </div>
     <div class="container">
     <button type="button" class="btn btn-outline-danger" onclick="document.location='parts/_logout.php'">Logout</button>
@@ -106,6 +107,26 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       </div>
       <div class="modal-body">
         <?php include 'parts/_pass.php'?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add note Modal -->
+<div class="modal fade" id="addNoteModal" tabindex="-1" aria-labelledby="addNoteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addNoteModalLabel">Add New Note</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <?php include 'parts/addnote.php'?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
