@@ -82,13 +82,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="profileModalLabel">
+        <h5 class="modal-title modalText" id="profileModalLabel">
         <img src="imgs/profile.png" height="30px" width="30px" alt=""> <?php echo $fname?>'s Profile</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body container">
+      <div class="modal-body container modalText">
         <h5>Name:- <?php echo $fname." ".$lname?></h5><br>
         <h5>Mail:- <?php echo $mail?></h5>
         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#passModal">Change Password</button>
@@ -105,7 +105,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="passModalLabel">Change Password</h5>
+        <h5 class="modal-title modalText" id="passModalLabel">Change Password</h5>
       </div>
       <div class="modal-body">
         <?php include 'parts/_pass.php'?>
@@ -122,7 +122,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addNoteModalLabel">Add New Note</h5>
+        <h5 class="modal-title modalText" id="addNoteModalLabel">Add New Note</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

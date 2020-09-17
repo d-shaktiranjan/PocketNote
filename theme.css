@@ -5,3 +5,7 @@ body {
   color: white;
   font-family: "DM Mono", monospace;
 }
+
+.modalText{
+  color:black;
+}
