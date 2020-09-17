@@ -37,13 +37,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
          crossorigin="anonymous">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 
+    <link rel="stylesheet" href="theme.css">
+
     <title>WebNote | <?php echo $name?></title>
 </head>
 
 <body>
 <?php include 'parts/navbar.php'?>
     
-    <h1 align="center">Hey <?php echo $name?></h1>
+    <h1 align="center">Hey <?php echo $name?>!!</h1>
     <div class="container">
     <hr>
     <?php include 'parts/_note.php'?>
