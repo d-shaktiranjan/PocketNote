@@ -27,7 +27,7 @@ while($row=mysqli_fetch_assoc($result)){
     <th scope='row'>".$slno."</th>
     <td>"."$row[title]"."</td>
     <td>"."$row[note]"."</td>
-    <td><button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#delModal\">Delete</button></td>
+    <td><a href=\"threads.php?catid=".$row['sno']."\" class=\"btn btn-primary\">Delete</a></td>
     </tr>";
     $slno++;
 }
