@@ -27,12 +27,30 @@ while($row=mysqli_fetch_assoc($result)){
     <th scope='row'>".$slno."</th>
     <td>"."$row[title]"."</td>
     <td>"."$row[note]"."</td>
-    <td><button type=\"button\" class=\"btn btn-primary\">Delete</button></td>
+    <td><button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#delModal\">Delete</button></td>
     </tr>";
     $slno++;
 }
 
 echo '</tbody>
 </table>';
+
+echo '<!-- Modal -->
+<div class="modal fade" id="delModal" tabindex="-1" aria-labelledby="delModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="delModalLabel">Do you want to delete the note?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-danger">Yes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Nope</button>
+      </div>
+    </div>
+  </div>
+</div>';
 
 ?>
