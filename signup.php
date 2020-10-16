@@ -30,13 +30,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $hash_pass=password_hash($password,PASSWORD_DEFAULT);
     $sql="INSERT INTO `wn_userdata` (`mail`, `pass`, `fname`, `lname`)
      VALUES ('$mail', '$hash_pass', '$fname', '$lname')";
-    session_start();
-    $_SESSION['loggedin']=true;
-    $_SESSION['mail']=$mail;
-    header("location: index.php");
     $result=mysqli_query($conn,$sql);
     if($result){
       $inserted=true;
+      session_start();
+      $_SESSION['loggedin']=true;
+      $_SESSION['mail']=$mail;
+      header("location: index.php");
     }
   }
 
