@@ -5,7 +5,6 @@ if(isset($_SESSION['mail'])){
   header("location: index.php");
 }
 
-$inserted=false;
 $passNotMatch=false;
 $mail=null;
 $alreadyhere=false;
@@ -32,7 +31,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
      VALUES ('$mail', '$hash_pass', '$fname', '$lname')";
     $result=mysqli_query($conn,$sql);
     if($result){
-      $inserted=true;
       session_start();
       $_SESSION['loggedin']=true;
       $_SESSION['mail']=$mail;
@@ -65,15 +63,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   <body>
   <?php include "parts/navbar.php"?>
   <?php
-
-  if($inserted){
-    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Account Created!</strong> Now you can login.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>';
-  }
 
   if($passNotMatch){
     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
