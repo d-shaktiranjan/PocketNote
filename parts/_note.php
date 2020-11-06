@@ -26,7 +26,7 @@ while($row=mysqli_fetch_assoc($result)){
     echo "<tr>
     <th scope='row'>".$slno."</th>
     <td>"."$row[title]"."</td>
-    <td><pre>"."$row[note]"."</pre></td>
+    <td>"."$row[note]"."</td>
     <td><a href=\"parts/_delete.php?note_id=".$row['sno']."\" class=\"btn btn-primary\">Delete</a></td>
     </tr>";
     $slno++;
