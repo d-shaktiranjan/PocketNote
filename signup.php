@@ -1,5 +1,6 @@
 <?php
 
+$inserted = false;
 session_start();
 if(isset($_SESSION['mail'])){
   header("location: index.php");
@@ -34,6 +35,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       session_start();
       $_SESSION['loggedin']=true;
       $_SESSION['mail']=$mail;
+      $inserted = true;
       header("location: index.php");
     }
   }
