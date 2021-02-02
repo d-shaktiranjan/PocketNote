@@ -1,16 +1,17 @@
 # A Web based Note📝 App (php, MySql & Bootstrap)
 # How to clone & setup?
-## 1:- Open Powersheel or cmd & follow the command
+## 1:- Intsall XAMPP
+Link:- https://www.apachefriends.org/download.html
+
+## 2:- Open Powersheel or cmd & follow the command
     cd ../..    
     git clone https://github.com/d-shaktiranjan/web_note.git -b main xampp/htdocs/web_note
       
-## 2:- Intsall XAMPP
-Link:- https://www.apachefriends.org/download.html
-## 2:- Open XAMPP Controller
+## 3:- Open XAMPP Controller
  And strat Apache & MySQL
-## 3:- Run the setup file
+## 4:- Run the setup file
 Link:- http://localhost/web_note
-## 4:- Setup the DB
+## 5:- Setup the DB
 1) Now open any browser  
 2) Then go to phpmyadmin  http://localhost/phpmyadmin  
 3) Make a new DB named "web_note"
